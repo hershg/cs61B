@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- common.css -->
+  <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: Arial, Helvetica, sans-serif;margin: 0;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+  <!-- ace-static.css -->
+  <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+  <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+  <!-- export.css -->
+  <style>
+    body{margin:0 auto;max-width:800px;line-height:1.4}
+    #nav{margin:5px 0 10px;font-size:15px}
+    #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+    #contentarea{font-size:15px;margin:16px 0}
+    .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+    .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+    .latex-cell{white-space:pre-wrap;}
+  </style>
+  <!-- User CSS -->
+  <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+</head>
+<body>
+  <div id="nav"><div>Next: <a href='Lecture 10 - 02 08.html'>Lecture 10 - 02/08</a>, Previous: <a href='Lecture 08 - 02 03.html'>Lecture 08 - 02/03</a>, Up: <a href='index.html'>Index</a></div></div>
+  <div id="titlearea">
+    <h2>Lecture 09 - 02/06</h2>
+  </div>
+  <div id="contentarea"><div class="cell markdown-cell"><h2 id="inheritance-ii">Inheritance II</h2>
+<ul>
+<li>When a class is a hyponym of an <em>interface</em>, we used <strong>implements</strong></li><li>If you want one class to be a hyponym of another <em>class</em>, you use <strong>extends</strong></li><li>With extends, a subclass inherits the following from its superclass:<ul>
+<li>All instance and static variables</li><li>All methods</li><li>All nested classes</li><li>Constructors not inherited</li></ul>
+</li><li>However, note that some members can be private and thus inaccessible</li><li>Still can use <code>@Override</code> to change subclass's implementation of superclass's method</li><li>Constructors: a subclass's constructor must start with a call to the superclass's constructor<ul>
+<li>Call superclass's constructor with <code>super();</code></li><li>If we don't explicitly call the superclass constructor, Java automatically does this (but for example may not pass appropriate parameters into the construtor)</li></ul>
+</li><li>All Java types extend from Object class</li><li>At runtime, the <code>this</code> for a call to a subclass is the subclass instance itself (remember run-time/dynamic type)<ul>
+<li>Let both the subclass and superclass have methods of the same name <code>foo</code></li><li>Let the superclass have a method <code>bar</code> that calls <code>foo</code></li><li>Let the subclass not have a method named <code>bar</code></li><li>If at some point, some method of the subclass calls <code>bar</code>, since the subclass doesn't have the method, its superclass's method of the same name, <code>bar</code>, is called</li><li>This <code>bar</code> method in turn call the <code>foo</code> method of the subclass, since <code>this</code> refers to the subclass</li><li>Note: this can lead to abstraction problems if the workings of a superclass are not known (thus it is said that implementation inheritance can break the abstraction barrier/encapsulation)</li></ul>
+</li></ul>
+<h2 id="encapsulation">Encapsulation</h2>
+<ul>
+<li>A problem with building large programs is complexity</li><li>We counter complexity with hierarchical abstraction - creation of <strong>layers of abstraction</strong>, abstraction barriers</li><li>Improve programs by designing them for change<ul>
+<li>Organize programs around objects</li><li>Hide information others don't need</li></ul>
+</li><li><strong>Module</strong>: A set of methods that work together as a whole to perform some task or set of related tasks</li><li>A module is said to be <strong>encapsulated</strong> if its implementation is completely hidden, and it can be accessed only through a documented interface<ul>
+<li>Privatize instance variables and helper methods (helper functions not for outside use)</li></ul>
+</li><li>Encapsulated modules have an abstraction barrier, so as users we can't see internals (also shouldn't usually look at internals when writing tests)</li><li>Implementation inheritance (such as extends) breaks encapsulation</li></ul>
+<h2 id="type-checking-casting">Type Checking/Casting</h2>
+<ul>
+<li>Compiler allows method calls/variable assignments based on the <strong>static/compile-time type</strong> of a variable</li><li>Example of this, along with <strong>static/comile-time vs dynamic/run-time types</strong>:<ul>
+<li>Say we have a superclass <code>superC</code> and a subclass <code>subC</code> that extends <code>superC</code></li><li>Let our subclass has a method <code>foo</code> that the superclass doesn't</li><li>Let <code>superC</code> and <code>subC</code> both have a method <code>bar</code> that <code>subC</code> overrides, and let the superclass have a method <code>baz</code> that the subclass lacks</li><li>Then, from <code>main</code>, we can say <code>subC mySub = new subC;</code> followed by <code>superC mySuper = mySub;</code> (this is allowed since a subclass is of the type of its superclass)<ul>
+<li>Note that the compile-time/static type of <code>mySuper</code> will be <code>superC</code> but the run-time/dynamic type is <code>subC</code></li></ul>
+</li><li>Continuing from <code>main</code>, if we do <code>mySuper.baz();</code>, we will call the <code>baz</code> method of the superclass since the subclass inherits this method</li><li>Then, if we do <code>mySuper.bar();</code>, we will use that of the subclass since we call based on the dynamic type of <code>mySuper</code>, which is <code>subC</code></li><li>Finally, if we try to do <code>mySuper.foo();</code>, we will actually get a compile-time error, and not call the subclass method <code>foo</code><ul>
+<li>This is because the Java compiler allows method calls based on the compile-time type, which is <code>superC</code>. Note, we didn't have this problem with the <code>bar</code> method because even though we end up calling the subclass method, the compiler sees that the compile-time type of <code>superC</code> does indeed have such a class and allows this</li><li>Basically, the compiler doesn't know what <code>mySuper</code>'s run-time type will be, and doesn't want to allow such a call since it doesn't know what will happen (compiler very conservative)</li></ul>
+</li><li>The compiler does a similar check with variable assignments<ul>
+<li>So, for example, we would get a compile-time error if we did <code>subC mySub2 = superC;</code> since the Java compiler doesn't know the run-time type of <code>superC</code> and plays it safe</li></ul>
+</li></ul>
+</li><li>The <code>new</code> keyword specifies the <strong>compile-time</strong> type of an expression (ex: for the part of an assignment that declares <code>new someClass</code>, this part of the assignment has a compile-time type of <code>someClass</code>)</li><li><strong>Type casting</strong>: to force the compile-time type of an expression, we put the desired type in parenthesis before the expression (ex: <code>(thisClass) mySomeClass</code> tells the compiler that <code>mySomeClass</code> has a type <code>thisClass</code>, and thus is treated as such (of course, this could lead to a run-time error if this type casting is invalid))</li></ul>
+<h2 id="higher-order-functions">Higher Order Functions</h2>
+<ul>
+<li>These exist in Java as well as Python<ul>
+<li>In Java 7 and older, we couldn't have a variable be a pointer to a function, making HOF tricky; we can make HOFs with interfaces instead to overcome this</li><li>Don't have this problem in Java 8</li></ul>
+</li><li>A HOF is a function that treats another function as input</li></ul>
+<p>For the following in Python:</p>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">def</span> <span class="ace_identifier">tenX</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">x</span><span class="ace_paren ace_rparen">)</span>:
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_constant ace_numeric">10</span><span class="ace_keyword ace_operator">*</span><span class="ace_identifier">x</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">def</span> <span class="ace_identifier">do_twice</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">f</span>, <span class="ace_identifier">x</span><span class="ace_paren ace_rparen">)</span>:
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">return</span> <span class="ace_identifier">f</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">f</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">x</span><span class="ace_paren ace_rparen">))</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">print</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">do_twice</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">tenX</span>, <span class="ace_constant ace_numeric">2</span><span class="ace_paren ace_rparen">))</span>
+</div></div></div></pre><p>We can equivalently do the following in Java via interfaces:</p>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">interface</span> <span class="ace_identifier">IntUnaryFunction</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">int</span> <span class="ace_identifier">apply</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">x</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">TenX</span> <span class="ace_keyword">implements</span> <span class="ace_identifier">IntUnaryFunction</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">public</span> <span class="ace_keyword">int</span> <span class="ace_identifier">apply</span>(<span class="ace_keyword">int</span> <span class="ace_identifier">x</span>) {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_keyword">return</span> <span class="ace_constant ace_numeric">10</span> <span class="ace_keyword ace_operator">*</span> <span class="ace_identifier">x</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">HoFDemo</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">int</span> <span class="ace_identifier">do_twice</span>(<span class="ace_identifier">IntUnaryFunction</span> <span class="ace_identifier">f</span>, <span class="ace_keyword">int</span> <span class="ace_identifier">x</span>) {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_keyword">return</span> <span class="ace_identifier">f</span>.<span class="ace_identifier">apply</span>(<span class="ace_identifier">f</span>.<span class="ace_identifier">apply</span>(<span class="ace_identifier">x</span>));
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span>   <span class="ace_support ace_function">System</span>.<span class="ace_identifier">out</span>.<span class="ace_identifier">println</span>(<span class="ace_identifier">do_twice</span>(<span class="ace_keyword">new</span> <span class="ace_identifier">TenX</span>(), <span class="ace_constant ace_numeric">2</span>));
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></pre><h3 id="summary-">Summary:</h3>
+<ul>
+<li>For inheritance with the <code>extends</code> keyword, a subclass gets the following non-private members from a superclass<ul>
+<li>Variables, methods, nested classes</li><li>Not constructors</li></ul>
+</li><li>Subclass constructor must invoke superclass constructor first</li><li>Use super to invoke overridden superclass methods and constructors</li><li>Invocation of overridden methods follows these rules:<ul>
+<li>Compiler plays it safe and only lets us do things allowed by static type</li><li>For overridden methods, the actual method invoked is based on dynamic type of invoking expression<ul>
+<li>This is bad to do for overloaded methods</li></ul>
+</li></ul>
+</li><li>Can use casting to overrule compiler type checking</li></ul>
+</div></div>
+  <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = 'Lecture 10 - 02 08.html';
+if (e.keyCode === 37) window.location.href = 'Lecture 08 - 02 03.html';
+}</script>
+</body>
+</html>

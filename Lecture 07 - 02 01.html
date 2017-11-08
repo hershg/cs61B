@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- common.css -->
+  <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: Arial, Helvetica, sans-serif;margin: 0;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+  <!-- ace-static.css -->
+  <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+  <style>.ace-tomorrow-night-eighties .ace_gutter {background: #272727;color: #CCC}.ace-tomorrow-night-eighties .ace_print-margin {width: 1px;background: #272727}.ace-tomorrow-night-eighties {background-color: #2D2D2D;color: #CCCCCC}.ace-tomorrow-night-eighties .ace_constant.ace_other,.ace-tomorrow-night-eighties .ace_cursor {color: #CCCCCC}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selection {background: #515151}.ace-tomorrow-night-eighties.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #2D2D2D;}.ace-tomorrow-night-eighties .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #6A6A6A}.ace-tomorrow-night-bright .ace_stack {background: rgb(66, 90, 44)}.ace-tomorrow-night-eighties .ace_marker-layer .ace_active-line {background: #393939}.ace-tomorrow-night-eighties .ace_gutter-active-line {background-color: #393939}.ace-tomorrow-night-eighties .ace_marker-layer .ace_selected-word {border: 1px solid #515151}.ace-tomorrow-night-eighties .ace_invisible {color: #6A6A6A}.ace-tomorrow-night-eighties .ace_keyword,.ace-tomorrow-night-eighties .ace_meta,.ace-tomorrow-night-eighties .ace_storage,.ace-tomorrow-night-eighties .ace_storage.ace_type,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #CC99CC}.ace-tomorrow-night-eighties .ace_keyword.ace_operator {color: #66CCCC}.ace-tomorrow-night-eighties .ace_constant.ace_character,.ace-tomorrow-night-eighties .ace_constant.ace_language,.ace-tomorrow-night-eighties .ace_constant.ace_numeric,.ace-tomorrow-night-eighties .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-eighties .ace_support.ace_constant,.ace-tomorrow-night-eighties .ace_variable.ace_parameter {color: #F99157}.ace-tomorrow-night-eighties .ace_invalid {color: #CDCDCD;background-color: #F2777A}.ace-tomorrow-night-eighties .ace_invalid.ace_deprecated {color: #CDCDCD;background-color: #CC99CC}.ace-tomorrow-night-eighties .ace_fold {background-color: #6699CC;border-color: #CCCCCC}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_function,.ace-tomorrow-night-eighties .ace_support.ace_function,.ace-tomorrow-night-eighties .ace_variable {color: #6699CC}.ace-tomorrow-night-eighties .ace_support.ace_class,.ace-tomorrow-night-eighties .ace_support.ace_type {color: #FFCC66}.ace-tomorrow-night-eighties .ace_heading,.ace-tomorrow-night-eighties .ace_markup.ace_heading,.ace-tomorrow-night-eighties .ace_string {color: #99CC99}.ace-tomorrow-night-eighties .ace_comment {color: #999999}.ace-tomorrow-night-eighties .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-eighties .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-eighties .ace_meta.ace_tag,.ace-tomorrow-night-eighties .ace_variable {color: #F2777A}.ace-tomorrow-night-eighties .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC) right repeat-y}</style>
+  <!-- export.css -->
+  <style>
+    body{margin:0 auto;max-width:800px;line-height:1.4}
+    #nav{margin:5px 0 10px;font-size:15px}
+    #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+    #contentarea{font-size:15px;margin:16px 0}
+    .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+    .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+    .latex-cell{white-space:pre-wrap;}
+  </style>
+  <!-- User CSS -->
+  <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+</head>
+<body>
+  <div id="nav"><div>Next: <a href='Lecture 08 - 02 03.html'>Lecture 08 - 02/03</a>, Previous: <a href='Lecture 06 - 01 30.html'>Lecture 06 - 01/30</a>, Up: <a href='index.html'>Index</a></div></div>
+  <div id="titlearea">
+    <h2>Lecture 07 - 02/01</h2>
+  </div>
+  <div id="contentarea"><div class="cell markdown-cell"><h2 id="testing">Testing</h2>
+<ul>
+<li>Suppose we want to write a class <code>Sort</code>, that sorts and prints a set of command line arguments</li><li>Instead of relying on some autograder to determine if our solution is valid, we can write our own tests.</li><li>New way: write testing class <code>TestSort</code> with a <code>testSort</code> method first<ul>
+<li>testSort will call our sorting class and use JUnit library to test the sorting function. In our main, we will call the testSort class:</li></ul>
+</li></ul>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_comment ace_doc">/** Tests the methods of the Sort class */</span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">public</span> <span class="ace_keyword">class</span> <span class="ace_identifier">TestSort</span> {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_identifier">testSort</span>() {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">input</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"cows"</span>, <span class="ace_string">"dwell"</span>, <span class="ace_string">"above"</span>, <span class="ace_string">"clouds"</span>};
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_support ace_function">String</span>[] <span class="ace_identifier">expected</span> <span class="ace_keyword ace_operator">=</span> {<span class="ace_string">"above"</span>, <span class="ace_string">"cows"</span>, <span class="ace_string">"clouds"</span>, <span class="ace_string">"dwell"</span>};
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">Sort</span>.<span class="ace_identifier">sort</span>(<span class="ace_identifier">input</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">org</span>.<span class="ace_identifier">junit</span>.<span class="ace_identifier">Assert</span>.<span class="ace_identifier">assertArrayEquals</span>(<span class="ace_identifier">expected</span>, <span class="ace_identifier">input</span>);
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  <span class="ace_keyword">public</span> <span class="ace_keyword">static</span> <span class="ace_keyword">void</span> <span class="ace_identifier">main</span>(<span class="ace_support ace_function">String</span>[] <span class="ace_identifier">args</span>) {
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>    <span class="ace_identifier">testSort</span>();
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>  }
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>}
+</div></div></div></pre><ul>
+<li>We want to write tests for every "unit" of our code, to decrease debugging time, clarify components of program, etc... (drawback: increased time spent programming, may give false confidence)</li><li>Good approach: Test Driven Development:<ul>
+<li>Write tests before writing the code, then write code to meet these tests. Tests should initially fail, and then after writing proper code the tests pass</li><li>This clarifies the task and is good practice</li><li>Drawback: delays actually creating the code, sometimes it's too early to define tasks via test cases</li><li>Better than the typical naive approach (reading specs for program, coding entire program, then checking and debuging the errors via print statements etc...) because this workflow is slow and unsafe</li></ul>
+</li><li>TDD is very far from the naive workflow we usually do, best approach probably something in middle: integration testing<ul>
+<li>Tests cover several units at once</li><li>Can ensure multiple units work properly together at a higher level of system</li><li>Drawbacks: testing at higher level of abstraction can miss lower level errors</li></ul>
+</li></ul>
+<h3 id="example-designing-selection-sort">Example: Designing Selection Sort</h3>
+<ul>
+<li>Sort a list of n items by finding the smallest item, moving it to the front, and then doing selection sort on the remaining n-1 items without touching the front item</li><li>Design workflow evolution:<br><img src="resources/72A90794E70AAC730E24C59A276F3E6C.jpg" alt=""></li></ul>
+<h3 id="summary-">Summary:</h3>
+<ul>
+<li>Often, development is an incremental process involving lots of task switching and on the fly design modification.</li><li>Unit tests provide stability<ul>
+<li>Provides confidence in basic units of code, helps for debugging</li><li>Allows for focus on one task/unit at a time</li></ul>
+</li><li>Allow for safer <em>refactoring</em> of code</li></ul>
+<h3 id="junit-tricks-">JUnit Tricks:</h3>
+<p>Instead of using:<br><code>org.junit.Assert.assertEquals(expected, actual);</code></p>
+<p>We can instead use <em>annotations</em>:</p>
+<ol>
+<li>Annotate each test with <code>@org.junit.Test</code></li><li>Change all test methods to non-static</li><li>Use a JUnit runner to run all tests and tabulate results<ol>
+<li>IntelliJ provides a default runner/renderer. OK to delete main.</li><li>Rendered output is easier to read, no need to manually invoke tests</li></ol>
+</li></ol>
+<p>Also, by doing:</p>
+<pre><div class="ace-tomorrow-night-eighties"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_identifier">org</span>.<span class="ace_identifier">junit</span>.<span class="ace_identifier">Test</span>;
+</div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword">import</span> <span class="ace_keyword">static</span> <span class="ace_identifier">org</span>.<span class="ace_identifier">junit</span>.<span class="ace_identifier">Assert</span>.<span class="ace_keyword ace_operator">*</span>;
+</div></div></div></pre><p>We will no longer need to type <code>org.junit</code> or <code>org.junit.Assert</code> parts of JUnit testing commands (ex: <code>@Test</code>).</p>
+</div></div>
+  <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = 'Lecture 08 - 02 03.html';
+if (e.keyCode === 37) window.location.href = 'Lecture 06 - 01 30.html';
+}</script>
+</body>
+</html>
